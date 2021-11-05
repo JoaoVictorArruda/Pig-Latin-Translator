@@ -26,7 +26,7 @@ function calculate(str) {
         stem = '';
         isUpperCase = words[i][0] === words[i][0].toUpperCase();
         let word = words[i].toLowerCase();
-        let findedVowel = false;
+        let foundVowel = false;
         let punctuation = '';
         if(!isCharacterALetter(word.substr(word.length - 1))) {
             punctuation = word.substr(word.length - 1);
@@ -34,18 +34,21 @@ function calculate(str) {
         }
         for (let j = 0; j < word.length; j++) {
             if(vowels.includes(word[j])) {
-                findedVowel = true;
+                foundVowel = true;
             }
-            if(!findedVowel) {
+            if(!foundVowel) {
                 prefix += word[j];
             } else {
                 stem += word[j];
             }
         }
+        if(hasNoConsonants(word)) {
+            prefix += 'y';
+        }
         stem = isUpperCase ? capitalizeFirstLetter(stem) : stem;
-        result.push(stem + prefix + 'ay' + punctuation.trim());
+        result.push(stem + prefix + 'ay' + punctuation);
     }
-    return result.join(' ')
+    return result.join(' ');
 }
 
 function capitalizeFirstLetter(string) {
@@ -55,16 +58,22 @@ function capitalizeFirstLetter(string) {
 function isCharacterALetter(char) {
     return (/[a-zA-Z]/).test(char)
 }
-function hasJustNumbers(char) {
-    return (/[0-9]/).test(char)
+
+function hasJustNumbers(string) {
+    return (/[0-9]/).test(string)
+}
+
+function hasNoConsonants(string) {
+    return !(/[bcdfghjklmnpqrstvwxyz]/gi).test(string)
 }
 
 const strings = [
     ['Stop', ['Opstay']],
     ['No littering', ['Onay itteringlay']],
-    ['No shirts, no shoes, no service', ['Onay irtsshay, onay eosshay, onay ervicesay']],
+    ['No shirts, no shoes, no service', ['Onay irtsshay, onay oesshay, onay ervicesay']],
     ['No persons under 14 admitted', ['Onay ersonspay underay 14 admitteday']],
-    ['Hey buddy, get away from my car!', ['Eyhay uddybah, etgay awayay omfray ymay arcay!']],
+    ['Hey buddy, get away from my car!', ['Eyhay uddybay, etgay awayay omfray ymay arcay!']]
+    ['I would be!', ['Iyay ouldway ebay!']],
 ];
 
 strings.forEach(([str, cor]) => {
