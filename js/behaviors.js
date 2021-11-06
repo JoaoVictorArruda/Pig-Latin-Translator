@@ -1,5 +1,5 @@
 let typingTimer;
-let doneTypingInterval = 200;
+let doneTypingInterval = 1000;
 let editor = document.getElementById("editor");
 let pigEditor = document.getElementById("pig-editor");
 let speakingPig = document.getElementById("speaking-pig");

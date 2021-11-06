@@ -3,6 +3,16 @@ body {
     background-size: cover;
 }
 
+.bottom {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 30px;
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
