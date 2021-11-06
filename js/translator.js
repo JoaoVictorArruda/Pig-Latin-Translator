@@ -1,5 +1,6 @@
-function calculate(str) {
-    let vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+function translate(str) {
+    str = str.trim();
+    let vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
     let words = str.split(' ');
     let prefix = '';
     let stem = '';
@@ -66,8 +67,8 @@ const strings = [
 
 strings.forEach(([str, cor]) => {
     const elem = document.createElement('div')
-    const ans = calculate(str)
+    const ans = translate(str)
     const isCor = cor.includes(ans)
     elem.innerHTML = `${isCor ? "OK" : "FAILED"} ${str} --> ${ans} ${isCor ? "" : "expected " + cor}`
-    document.body.appendChild(elem)
+    // document.body.appendChild(elem)
 });
