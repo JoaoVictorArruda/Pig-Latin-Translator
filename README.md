@@ -1,5 +1,4 @@
-<!-- Pig Latin Translator -->
-## About The Project
+## 🐷 Pig Latin Translator ✏️
 
 This English to Pig Latin translation program performs a perfect translation of any text to Pig Latin. Words, phrases, sentences, paragraphs and more.
 
