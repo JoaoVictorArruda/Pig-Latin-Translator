@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "JoaoVictorArruda/pig-latin-translator",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
