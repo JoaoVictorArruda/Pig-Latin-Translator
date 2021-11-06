@@ -16,7 +16,7 @@ document.getElementById("editor").addEventListener("keyup", function() {
 document.getElementById("editor").addEventListener("keydown", function() {
     clearTimeout(typingTimer);
     speakingPig.setAttribute("style", "transform: scaleX(" + 1 + ")");
-
+    pigEditor.innerHTML = "< Listening >";
 }, false);
 
 //user is "finished typing,"
